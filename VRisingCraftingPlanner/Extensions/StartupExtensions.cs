@@ -17,7 +17,6 @@ public static  class StartupExtensions
       .AddTransient<RecipesReader>()
       .AddTransient<ItemTypesReader>()
       .AddScoped<InventoryStore>()
-      .AddTransient<InventoryReader>()
-      .AddSingleton<InstructionStore>();
+      .AddTransient<InventoryReader>();
   }
 }
