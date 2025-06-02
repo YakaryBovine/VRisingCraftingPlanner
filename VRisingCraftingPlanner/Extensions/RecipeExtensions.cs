@@ -10,13 +10,13 @@ public static class RecipeExtensions
     services.AddSingleton(new Recipe([
       new Item
       {
-        ItemType = new ItemType("Iron Ore"),
+        ItemType = new ItemType("Iron Ore", ItemOrigin.Ingredient),
         Count = 15
       }
     ], [
       new Item
       {
-        ItemType = new ItemType("Iron Ingot"),
+        ItemType = new ItemType("Iron Ingot", ItemOrigin.Product),
         Count = 1
       }
     ], "Furnace"));

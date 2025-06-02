@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using VRisingCraftingPlanner.Data;
 using VRisingCraftingPlanner.Extensions;
 using VRisingCraftingPlanner.Services;
 
@@ -12,15 +11,19 @@ namespace VRisingCraftingPlanner
     public static async Task Main(string[] args)
     {
       using var host = CreateHostBuilder(args).Build();
+
+
+      var itemTypeStore = host.Services.GetRequiredService<ItemTypeStore>();
+      var x = itemTypeStore.LoadItemTypes("Data/items.csv");
       
-      var solver = host.Services.GetRequiredService<InstructionSolver>();
-      solver.Solve([], [
-        new Item
-        {
-          ItemType = new ItemType("Iron Ingot"),
-          Count = 5
-        }
-      ]);
+      // var solver = host.Services.GetRequiredService<InstructionSolver>();
+      // solver.Solve([], [
+      //   new Item
+      //   {
+      //     ItemType = new ItemType("Iron Ingot"),
+      //     Count = 5
+      //   }
+      // ]);
 
       await host.StopAsync();
     }

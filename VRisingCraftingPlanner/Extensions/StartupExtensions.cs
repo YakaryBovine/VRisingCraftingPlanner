@@ -10,6 +10,7 @@ public static  class StartupExtensions
     return services
       .AddTransient<RecipeBook>()
       .AddTransient<InstructionSolver>()
-      .AddSingleton<InventoryManager>();
+      .AddSingleton<InventoryManager>()
+      .AddSingleton<ItemTypeStore>();
   }
 }
