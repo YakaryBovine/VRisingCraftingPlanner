@@ -41,7 +41,7 @@ public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore
     {
       var recipe = recipeStore.GetRecipeForItem(item.ItemType);
       var productCount = recipe.Products.First(x => x.ItemType == item.ItemType).Count;
-      var craftsNeeded = item.Count / productCount * -1;
+      var craftsNeeded = (int)Math.Ceiling((double)item.Count / productCount * -1);
       for (var i = 0; i < craftsNeeded; i++)
       {
         itemBalanceStore.Subtract(recipe.Ingredients);
@@ -69,7 +69,7 @@ public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore
       {
         var recipe = recipeStore.GetRecipeForItem(item.ItemType);
         var productCount = recipe.Products.First(x => x.ItemType == item.ItemType).Count;
-        var craftsNeeded = item.Count / productCount * -1;
+        var craftsNeeded = (int)Math.Ceiling((double)item.Count / productCount * -1);
         instructions.Add(new CraftInstruction(recipe, craftsNeeded, item.ItemType.Tier));
       }
     }
