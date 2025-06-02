@@ -3,9 +3,9 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using VRisingCraftingPlanner.Models;
 
-namespace VRisingCraftingPlanner.Services;
+namespace VRisingCraftingPlanner.Services.Readers;
 
-public class ItemTypesParser
+public class ItemTypesReader
 {
   public List<ItemType> LoadItemTypes(string path)
   {

@@ -1,10 +1,11 @@
 ﻿using VRisingCraftingPlanner.Models;
+using VRisingCraftingPlanner.Services.Readers;
 
-namespace VRisingCraftingPlanner.Services;
+namespace VRisingCraftingPlanner.Services.Stores;
 
-public sealed class ItemTypeStore(ItemTypesParser parser)
+public sealed class ItemTypeStore(ItemTypesReader reader)
 {
-  private readonly List<ItemType> _itemTypes = parser.LoadItemTypes("Data/items.csv");
+  private readonly List<ItemType> _itemTypes = reader.LoadItemTypes("Data/items.csv");
 
   public ItemType GetItemType(string name)
   {

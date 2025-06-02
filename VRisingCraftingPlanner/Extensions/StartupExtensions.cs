@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using VRisingCraftingPlanner.Services;
+using VRisingCraftingPlanner.Services.Readers;
+using VRisingCraftingPlanner.Services.Solvers;
+using VRisingCraftingPlanner.Services.Stores;
 
 namespace VRisingCraftingPlanner.Extensions;
 
@@ -10,9 +12,11 @@ public static  class StartupExtensions
     return services
       .AddTransient<RecipeStore>()
       .AddTransient<InstructionSolver>()
-      .AddSingleton<InventoryManager>()
+      .AddSingleton<ItemBalanceStore>()
       .AddSingleton<ItemTypeStore>()
-      .AddTransient<RecipeParser>()
-      .AddTransient<ItemTypesParser>();
+      .AddTransient<RecipesReader>()
+      .AddTransient<ItemTypesReader>()
+      .AddScoped<InventoryStore>()
+      .AddTransient<InventoryReader>();
   }
 }

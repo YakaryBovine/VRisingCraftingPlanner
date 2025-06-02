@@ -1,10 +1,11 @@
 ﻿using System.Text.Json;
 using VRisingCraftingPlanner.DTOs;
 using VRisingCraftingPlanner.Models;
+using VRisingCraftingPlanner.Services.Stores;
 
-namespace VRisingCraftingPlanner.Services;
+namespace VRisingCraftingPlanner.Services.Readers;
 
-public sealed class RecipeParser(ItemTypeStore itemTypeStore)
+public sealed class RecipesReader(ItemTypeStore itemTypeStore)
 {
   private readonly JsonSerializerOptions _options = new()
   {

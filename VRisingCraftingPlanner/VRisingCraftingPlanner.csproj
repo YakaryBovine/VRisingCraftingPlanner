@@ -14,6 +14,9 @@
         <None Update="Data\recipes.json">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
+        <None Update="Data\Inventory.csv">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
     
     <ItemGroup>

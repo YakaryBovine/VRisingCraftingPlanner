@@ -2,8 +2,7 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using VRisingCraftingPlanner.Extensions;
-using VRisingCraftingPlanner.Models;
-using VRisingCraftingPlanner.Services;
+using VRisingCraftingPlanner.Services.Solvers;
 
 namespace VRisingCraftingPlanner
 {
@@ -14,13 +13,7 @@ namespace VRisingCraftingPlanner
       using var host = CreateHostBuilder(args).Build();
 
       var solver = host.Services.GetRequiredService<InstructionSolver>();
-      solver.Solve([], [
-        new Item
-        {
-          ItemType = new ItemType("Iron Ingot", ItemOrigin.Product),
-          Count = 5
-        }
-      ]);
+      solver.Solve();
 
       await host.StopAsync();
     }

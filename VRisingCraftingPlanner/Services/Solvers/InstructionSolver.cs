@@ -1,27 +1,25 @@
 ﻿using VRisingCraftingPlanner.Instructions;
 using VRisingCraftingPlanner.Models;
+using VRisingCraftingPlanner.Services.Stores;
 
-namespace VRisingCraftingPlanner.Services;
+namespace VRisingCraftingPlanner.Services.Solvers;
 
-public sealed class InstructionSolver(RecipeStore recipeStore, InventoryManager inventoryManager)
+public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore recipeStore, ItemBalanceStore itemBalanceStore)
 {
   /// <summary>
   /// Receives the items the player would like to acquire, and the items they already have, and provides a series of
   /// instructions for acquiring those items.
   /// </summary>
-  /// <param name="inventory">Items the player already has.</param>
-  /// <param name="wishlist">Items the player would like to have.</param>
   /// <returns>A series of tasks the player should undertake to acquire the items.</returns>
-  public List<IInstruction> Solve(List<Item> inventory, List<Item> wishlist)
+  public List<IInstruction> Solve()
   {
     var instructions = new List<IInstruction>();
     
     //Add items to inventory
-    inventoryManager.Add(inventory);
-    inventoryManager.Subtract(wishlist);
+    itemBalanceStore.Add(inventoryStore.GetInventory());
 
     //Craft everything we need
-    foreach (var item in inventoryManager.GetAllItems().ToList())
+    foreach (var item in itemBalanceStore.GetAllItems().ToList())
     {
       if (item.Count < 1)
       {
@@ -30,8 +28,8 @@ public sealed class InstructionSolver(RecipeStore recipeStore, InventoryManager 
         var craftsNeeded = item.Count / productCount * -1;
         for (var i = 0; i < craftsNeeded; i++)
         {
-          inventoryManager.Add(recipe.Products);
-          inventoryManager.Subtract(recipe.Ingredients);
+          itemBalanceStore.Add(recipe.Products);
+          itemBalanceStore.Subtract(recipe.Ingredients);
         }
         instructions.Add(new CraftInstruction(recipe, craftsNeeded));
       }
