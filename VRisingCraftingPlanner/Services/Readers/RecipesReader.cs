@@ -20,7 +20,7 @@ public sealed class RecipesReader(ItemTypeStore itemTypeStore)
   }
 
   private Recipe RecipeDtoToRecipe(RecipeDto recipeDto) => new(recipeDto.Ingredients.Select(ItemDtoToItem),
-    recipeDto.Products.Select(ItemDtoToItem), recipeDto.Station);
+    recipeDto.Products.Select(ItemDtoToItem), recipeDto.Station, recipeDto.Tier);
 
   private Item ItemDtoToItem(ItemDto dto)
   {

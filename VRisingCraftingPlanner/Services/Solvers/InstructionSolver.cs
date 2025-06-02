@@ -63,7 +63,7 @@ public sealed class InstructionSolver(
         itemBalanceStore.Add(recipe.Products);
       }
       
-      instructions.Add(new CraftInstruction(recipe, craftsNeeded, item.ItemType.Tier));
+      instructions.Add(new CraftInstruction(recipe, craftsNeeded, recipe.Tier));
     }
   }
   

@@ -7,7 +7,8 @@
     "products": [
       { "itemType": "Plank", "count": 1 },
       { "itemType": "Sawdust", "count": 1 }
-    ]
+    ],
+    "tier": 1
   },
   {
     "station": "Forge",
@@ -16,7 +17,8 @@
     ],
     "products": [
       { "itemType": "Iron Ingot", "count": 1 }
-    ]
+    ],
+    "tier": 1
   },
   {
     "station": "Anvil",
@@ -27,7 +29,8 @@
     ],
     "products": [
       { "itemType": "Onyx Tear", "count": 1 }
-    ]
+    ],
+    "tier": 5
   },
   {
     "station": "Furnace",
@@ -37,7 +40,8 @@
     ],
     "products": [
       { "itemType": "Gold Ingot", "count": 1 }
-    ]
+    ],
+    "tier": 2
   },
   {
     "station": "Furnace",
@@ -46,7 +50,8 @@
     ],
     "products": [
       { "itemType": "Sulphur", "count": 1 }
-    ]
+    ],
+    "tier": 1
   },
   {
     "station": "Fabricator",
@@ -56,7 +61,8 @@
     ],
     "products": [
       { "itemType": "Power Core", "count": 2 }
-    ]
+    ],
+    "tier": 4
   },
   {
     "station": "Furnace",
@@ -66,7 +72,8 @@
     ],
     "products": [
       { "itemType": "Ember Glass", "count": 1 }
-    ]
+    ],
+    "tier": 1
   },
   {
     "station": "Furnace",
@@ -77,7 +84,8 @@
     ],
     "products": [
       { "itemType": "Radium Alloy", "count": 4 }
-    ]
+    ],
+    "tier": 3
   },
   {
     "station": "Fabricator",
@@ -88,7 +96,8 @@
     ],
     "products": [
       { "itemType": "Sludge-filled Canister", "count": 1 }
-    ]
+    ],
+    "tier": 2
   },
   {
     "station": "Furnace",
@@ -97,7 +106,8 @@
     ],
     "products": [
       { "itemType": "Glass", "count": 1 }
-    ]
+    ],
+    "tier": 1
   },
   {
     "station": "Sawmill",
@@ -107,7 +117,8 @@
     "products": [
       { "itemType": "Venom Sap", "count": 4 },
       { "itemType": "Plank", "count": 1 }
-    ]
+    ],
+    "tier": 1
   },
   {
     "station": "Vermin Nest",
@@ -118,7 +129,8 @@
     "products": [
       { "itemType": "Bone", "count": 60 },
       { "itemType": "Mutant Grease", "count": 60 }
-    ]
+    ],
+    "tier": 3
   },
   {
     "station": "Grinder",
@@ -127,6 +139,7 @@
     ],
     "products": [
       { "itemType": "Grave Dust", "count": 1 }
-    ]
+    ],
+    "tier": 1
   }
 ]
