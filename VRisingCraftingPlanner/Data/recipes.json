@@ -98,5 +98,15 @@
     "products": [
       { "itemType": "Glass", "count": 1 }
     ]
+  },
+  {
+    "station": "Sawmill",
+    "ingredients": [
+      { "itemType": "Corrupted Oak", "count": 15 }
+    ],
+    "products": [
+      { "itemType": "Venom Sap", "count": 4 },
+      { "itemType": "Plank", "count": 1 }
+    ]
   }
 ]

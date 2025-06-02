@@ -30,11 +30,11 @@ public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore
   {
     foreach (var item in itemBalanceStore.GetAllItems().Where(x => x.ItemType.Origin == ItemOrigin.Product).ToList())
     {
-      ProcessCraft(item, instructions);
+      ProcessCraft(item, instructions, 1);
     }
   }
 
-  private void ProcessCraft(Item item, List<IInstruction> instructions)
+  private void ProcessCraft(Item item, List<IInstruction> instructions, int priority)
   {
     if (item.Count < 0)
     {
@@ -46,10 +46,10 @@ public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore
         itemBalanceStore.Add(recipe.Products);
         itemBalanceStore.Subtract(recipe.Ingredients);
       }
-      instructions.Add(new CraftInstruction(recipe, craftsNeeded));
+      instructions.Add(new CraftInstruction(recipe, craftsNeeded, priority));
 
       foreach (var subProduct in recipe.Ingredients.Where(x => x.ItemType.Origin == ItemOrigin.Product)) 
-        ProcessCraft(subProduct with { Count = subProduct.Count * -1 }, instructions);
+        ProcessCraft(subProduct with { Count = subProduct.Count * -1 }, instructions, priority + 1);
     }
   }
   
@@ -62,7 +62,11 @@ public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore
   
   private static void PrintInstructions(List<IInstruction> instructions)
   {
-    foreach (var instruction in instructions) 
-      Console.WriteLine(instruction.Message);
+    var count = 1;
+    foreach (var instruction in instructions.OrderByDescending(x => x.Priority))
+    {
+      Console.WriteLine($"{count}. {instruction.Message}");
+      count++;
+    }
   }
 }

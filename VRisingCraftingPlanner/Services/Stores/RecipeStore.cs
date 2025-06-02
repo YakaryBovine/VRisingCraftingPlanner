@@ -12,7 +12,7 @@ public sealed class RecipeStore
     var recipes = recipesReader.LoadRecipes("Data/recipes.json");
     foreach (var recipe in recipes)
       foreach (var product in recipe.Products) 
-        _recipesByItem.Add(product.ItemType, recipe);
+        _recipesByItem.TryAdd(product.ItemType, recipe);
   }
 
   public Recipe GetRecipeForItem(ItemType itemType)

@@ -3,7 +3,7 @@ using VRisingCraftingPlanner.Models;
 
 namespace VRisingCraftingPlanner.Instructions;
 
-public sealed class CraftInstruction(Recipe recipe, int count) : IInstruction
+public sealed class CraftInstruction(Recipe recipe, int count, int priority) : IInstruction
 {
   public string Message
   {
@@ -12,4 +12,6 @@ public sealed class CraftInstruction(Recipe recipe, int count) : IInstruction
       var materials = recipe.Ingredients.Select(m => $"{m.Count * count} {m.ItemType}").JoinWithAnd();
       return $"Craft {products} using {materials} at the {recipe.Station}."; }
   }
+
+  public int Priority { get; } = priority;
 }
