@@ -1,3 +1,3 @@
-﻿namespace VRisingCraftingPlanner.Data;
+﻿namespace VRisingCraftingPlanner.Models;
 
-public sealed record Recipe(Item[] Components, Item[] Products, string Station);
+public sealed record Recipe(IEnumerable<Item> Ingredients, IEnumerable<Item> Products, string Station);

@@ -1,4 +1,4 @@
-﻿namespace VRisingCraftingPlanner.Data;
+﻿namespace VRisingCraftingPlanner.Models;
 
 public readonly record struct ItemType(string Name, ItemOrigin Origin)
 {

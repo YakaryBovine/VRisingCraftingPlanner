@@ -1,4 +1,4 @@
-﻿using VRisingCraftingPlanner.Data;
+﻿using VRisingCraftingPlanner.Models;
 
 namespace VRisingCraftingPlanner.Services;
 

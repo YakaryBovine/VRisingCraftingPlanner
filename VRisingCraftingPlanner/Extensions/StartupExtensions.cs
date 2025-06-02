@@ -8,9 +8,11 @@ public static  class StartupExtensions
   public static IServiceCollection AddCraftingPlannerServices(this IServiceCollection services)
   {
     return services
-      .AddTransient<RecipeBook>()
+      .AddTransient<RecipeStore>()
       .AddTransient<InstructionSolver>()
       .AddSingleton<InventoryManager>()
-      .AddSingleton<ItemTypeStore>();
+      .AddSingleton<ItemTypeStore>()
+      .AddTransient<RecipeParser>()
+      .AddTransient<ItemTypesParser>();
   }
 }

@@ -1,21 +1,16 @@
-﻿using CsvHelper;
-using CsvHelper.Configuration;
-using System.Globalization;
-using VRisingCraftingPlanner.Data;
+﻿using VRisingCraftingPlanner.Models;
 
 namespace VRisingCraftingPlanner.Services;
 
-public sealed class ItemTypeStore
+public sealed class ItemTypeStore(ItemTypesParser parser)
 {
-  public List<ItemType> LoadItemTypes(string path)
-  {
-    using var reader = new StreamReader(path);
-    using var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)
-    {
-      HeaderValidated = null,
-      MissingFieldFound = null
-    });
+  private readonly List<ItemType> _itemTypes = parser.LoadItemTypes("Data/items.csv");
 
-    return csv.GetRecords<ItemType>().ToList();
+  public ItemType GetItemType(string name)
+  {
+    var itemType = _itemTypes.FirstOrDefault(x => x.Name == name);
+    if (itemType == default)
+      throw new InvalidOperationException($"There is no item type named {name}. Make sure it's included in items.csv");
+    return itemType;
   }
 }

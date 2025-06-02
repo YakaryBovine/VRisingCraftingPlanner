@@ -1,0 +1,21 @@
+﻿[
+  {
+    "station": "Sawmill",
+    "ingredients": [
+      { "itemType": "Wood", "count": 15 }
+    ],
+    "products": [
+      { "itemType": "Plank", "count": 1 },
+      { "itemType": "Sawdust", "count": 1 }
+    ]
+  },
+  {
+    "station": "Forge",
+    "ingredients": [
+      { "itemType": "Iron Ore", "count": 15 }
+    ],
+    "products": [
+      { "itemType": "Iron Ingot", "count": 1 }
+    ]
+  }
+]

@@ -1,8 +1,9 @@
-﻿using VRisingCraftingPlanner.Data;
+﻿using VRisingCraftingPlanner.Instructions;
+using VRisingCraftingPlanner.Models;
 
 namespace VRisingCraftingPlanner.Services;
 
-public sealed class InstructionSolver(RecipeBook recipeBook, InventoryManager inventoryManager)
+public sealed class InstructionSolver(RecipeStore recipeStore, InventoryManager inventoryManager)
 {
   /// <summary>
   /// Receives the items the player would like to acquire, and the items they already have, and provides a series of
@@ -24,13 +25,13 @@ public sealed class InstructionSolver(RecipeBook recipeBook, InventoryManager in
     {
       if (item.Count < 1)
       {
-        var recipe = recipeBook.GetRecipeForItem(item.ItemType);
+        var recipe = recipeStore.GetRecipeForItem(item.ItemType);
         var productCount = recipe.Products.First(x => x.ItemType == item.ItemType).Count;
         var craftsNeeded = item.Count / productCount * -1;
         for (var i = 0; i < craftsNeeded; i++)
         {
           inventoryManager.Add(recipe.Products);
-          inventoryManager.Subtract(recipe.Components);
+          inventoryManager.Subtract(recipe.Ingredients);
         }
         instructions.Add(new CraftInstruction(recipe, craftsNeeded));
       }
