@@ -116,7 +116,8 @@
       { "itemType": "Grave Dust", "count": 3 }
     ],
     "products": [
-      { "itemType": "Mutated Rat", "count": 6 }
+      { "itemType": "Bone", "count": 60 },
+      { "itemType": "Mutant Grease", "count": 60 }
     ]
   },
   {
