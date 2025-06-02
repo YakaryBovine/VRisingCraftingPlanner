@@ -6,5 +6,5 @@ public sealed record GatheringInstruction(ItemType ItemType, int Count, string L
 {
   public string Message => $"Gather {Count} {ItemType} from {Location}";
 
-  public int Priority => 1000;
+  public int Priority => 0;
 }

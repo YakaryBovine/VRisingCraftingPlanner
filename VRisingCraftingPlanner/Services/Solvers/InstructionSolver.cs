@@ -70,7 +70,7 @@ public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore
         var recipe = recipeStore.GetRecipeForItem(item.ItemType);
         var productCount = recipe.Products.First(x => x.ItemType == item.ItemType).Count;
         var craftsNeeded = item.Count / productCount * -1;
-        instructions.Add(new CraftInstruction(recipe, craftsNeeded, 0));
+        instructions.Add(new CraftInstruction(recipe, craftsNeeded, item.ItemType.Tier));
       }
     }
   }
@@ -78,7 +78,7 @@ public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore
   private static void PrintInstructions(List<IInstruction> instructions)
   {
     var count = 1;
-    foreach (var instruction in instructions.OrderByDescending(x => x.Priority))
+    foreach (var instruction in instructions.OrderBy(x => x.Priority))
     {
       Console.WriteLine($"{count}. {instruction.Message}");
       count++;

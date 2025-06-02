@@ -1,23 +1,23 @@
-﻿Name,Origin
-Wood,Ingredient
-Iron Ore,Ingredient
-Plank,Product
-Iron Ingot,Product
-Sawdust,Product
-Onyx Tear,Product
-Gold Ingot,Product
-Power Core,Product
-Ember Glass,Product
-Gold Jewelry,Ingredient
-Sulphur,Product
-Sulphur Ore,Ingredient
-Charged Battery,Ingredient
-Radium Alloy,Product
-Venom Sap,Product
-Emery,Ingredient
-Sludge-filled Canister,Product
-Tech Scrap,Ingredient
-Mutant Grease,Ingredient
-Glass,Product
-Quartz,Ingredient
-Corrupted Oak,Ingredient
+﻿Name,Origin,Tier
+Wood,Ingredient,0
+Iron Ore,Ingredient,0
+Plank,Product,1
+Iron Ingot,Product,1
+Sawdust,Product,1
+Onyx Tear,Product,5
+Gold Ingot,Product,1
+Power Core,Product,4
+Ember Glass,Product,2
+Gold Jewelry,Ingredient,0
+Sulphur,Product,1
+Sulphur Ore,Ingredient,0
+Charged Battery,Ingredient,0
+Radium Alloy,Product,3
+Venom Sap,Product,1
+Emery,Ingredient,0
+Sludge-filled Canister,Product,2
+Tech Scrap,Ingredient,0
+Mutant Grease,Ingredient,0
+Glass,Product,1
+Quartz,Ingredient,0
+Corrupted Oak,Ingredient,0
