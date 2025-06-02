@@ -11,7 +11,7 @@ public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore
   /// instructions for acquiring those items.
   /// </summary>
   /// <returns>A series of tasks the player should undertake to acquire the items.</returns>
-  public List<IInstruction> Solve()
+  public void Solve()
   {
     var instructions = new List<IInstruction>();
     
@@ -35,6 +35,9 @@ public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore
       }
     }
 
-    return instructions;
+    foreach (var instruction in instructions)
+    {
+      Console.WriteLine(instruction.Message);
+    }
   }
 }
