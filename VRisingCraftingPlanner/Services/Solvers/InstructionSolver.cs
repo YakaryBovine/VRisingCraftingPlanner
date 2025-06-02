@@ -58,7 +58,7 @@ public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore
   {
     foreach (var item in itemBalanceStore.GetAllItems().Where(x => x.ItemType.Origin == ItemOrigin.Ingredient).ToList())
       if (item.Count < 0) 
-        instructions.Add(new GatheringInstruction(item.ItemType, item.Count * -1, "Farbane"));
+        instructions.Add(new GatheringInstruction(item.ItemType, item.Count * -1));
   }
 
   private void GenerateCraftInstructions(List<IInstruction> instructions)
