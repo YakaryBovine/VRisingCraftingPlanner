@@ -14,30 +14,55 @@ public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore
   public void Solve()
   {
     var instructions = new List<IInstruction>();
-    
-    //Add items to inventory
+
+    ProcessInventory();
+    ProcessCrafts(instructions);
+    ProcessMaterials(instructions);
+    PrintInstructions(instructions);
+  }
+
+  private void ProcessInventory()
+  {
     itemBalanceStore.Add(inventoryStore.GetInventory());
+  }
 
-    //Craft everything we need
-    foreach (var item in itemBalanceStore.GetAllItems().ToList())
+  private void ProcessCrafts(List<IInstruction> instructions)
+  {
+    foreach (var item in itemBalanceStore.GetAllItems().Where(x => x.ItemType.Origin == ItemOrigin.Product).ToList())
     {
-      if (item.Count < 1)
+      ProcessCraft(item, instructions);
+    }
+  }
+
+  private void ProcessCraft(Item item, List<IInstruction> instructions)
+  {
+    if (item.Count < 0)
+    {
+      var recipe = recipeStore.GetRecipeForItem(item.ItemType);
+      var productCount = recipe.Products.First(x => x.ItemType == item.ItemType).Count;
+      var craftsNeeded = item.Count / productCount * -1;
+      for (var i = 0; i < craftsNeeded; i++)
       {
-        var recipe = recipeStore.GetRecipeForItem(item.ItemType);
-        var productCount = recipe.Products.First(x => x.ItemType == item.ItemType).Count;
-        var craftsNeeded = item.Count / productCount * -1;
-        for (var i = 0; i < craftsNeeded; i++)
-        {
-          itemBalanceStore.Add(recipe.Products);
-          itemBalanceStore.Subtract(recipe.Ingredients);
-        }
-        instructions.Add(new CraftInstruction(recipe, craftsNeeded));
+        itemBalanceStore.Add(recipe.Products);
+        itemBalanceStore.Subtract(recipe.Ingredients);
       }
-    }
+      instructions.Add(new CraftInstruction(recipe, craftsNeeded));
 
-    foreach (var instruction in instructions)
-    {
-      Console.WriteLine(instruction.Message);
+      foreach (var subProduct in recipe.Ingredients.Where(x => x.ItemType.Origin == ItemOrigin.Product)) 
+        ProcessCraft(subProduct with { Count = subProduct.Count * -1 }, instructions);
     }
+  }
+  
+  private void ProcessMaterials(List<IInstruction> instructions)
+  {
+    foreach (var item in itemBalanceStore.GetAllItems().Where(x => x.ItemType.Origin == ItemOrigin.Ingredient).ToList())
+      if (item.Count < 0) 
+        instructions.Add(new GatheringInstruction(item.ItemType, item.Count * -1, "Farbane"));
+  }
+  
+  private static void PrintInstructions(List<IInstruction> instructions)
+  {
+    foreach (var instruction in instructions) 
+      Console.WriteLine(instruction.Message);
   }
 }

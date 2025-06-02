@@ -15,5 +15,11 @@ public sealed class RecipeStore
         _recipesByItem.Add(product.ItemType, recipe);
   }
 
-  public Recipe GetRecipeForItem(ItemType itemType) => _recipesByItem[itemType];
+  public Recipe GetRecipeForItem(ItemType itemType)
+  {
+    if (_recipesByItem.TryGetValue(itemType, out var recipe))
+      return recipe;
+
+    throw new Exception($"There is no recipe that can craft {itemType.Name}. Add it to recipes.json");
+  }
 }

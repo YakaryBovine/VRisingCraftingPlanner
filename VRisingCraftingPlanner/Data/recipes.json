@@ -17,5 +17,86 @@
     "products": [
       { "itemType": "Iron Ingot", "count": 1 }
     ]
+  },
+  {
+    "station": "Anvil",
+    "ingredients": [
+      { "itemType": "Gold Ingot", "count": 3 },
+      { "itemType": "Power Core", "count": 3 },
+      { "itemType": "Ember Glass", "count": 3 }
+    ],
+    "products": [
+      { "itemType": "Onyx Tear", "count": 1 }
+    ]
+  },
+  {
+    "station": "Furnace",
+    "ingredients": [
+      { "itemType": "Gold Jewelry", "count": 3 },
+      { "itemType": "Sulphur", "count": 1 }
+    ],
+    "products": [
+      { "itemType": "Gold Ingot", "count": 1 }
+    ]
+  },
+  {
+    "station": "Furnace",
+    "ingredients": [
+      { "itemType": "Sulphur Ore", "count": 15 }
+    ],
+    "products": [
+      { "itemType": "Sulphur", "count": 1 }
+    ]
+  },
+  {
+    "station": "Fabricator",
+    "ingredients": [
+      { "itemType": "Charged Battery", "count": 3 },
+      { "itemType": "Radium Alloy", "count": 6 }
+    ],
+    "products": [
+      { "itemType": "Power Core", "count": 2 }
+    ]
+  },
+  {
+    "station": "Furnace",
+    "ingredients": [
+      { "itemType": "Venom Sap", "count": 6 },
+      { "itemType": "Emery", "count": 15 }
+    ],
+    "products": [
+      { "itemType": "Ember Glass", "count": 1 }
+    ]
+  },
+  {
+    "station": "Furnace",
+    "ingredients": [
+      { "itemType": "Sludge-filled Canister", "count": 1 },
+      { "itemType": "Sulphur", "count": 3 },
+      { "itemType": "Tech Scrap", "count": 45 }
+    ],
+    "products": [
+      { "itemType": "Radium Alloy", "count": 4 }
+    ]
+  },
+  {
+    "station": "Fabricator",
+    "ingredients": [
+      { "itemType": "Iron Ingot", "count": 1 },
+      { "itemType": "Mutant Grease", "count": 3 },
+      { "itemType": "Glass", "count": 3 }
+    ],
+    "products": [
+      { "itemType": "Sludge-filled Canister", "count": 1 }
+    ]
+  },
+  {
+    "station": "Furnace",
+    "ingredients": [
+      { "itemType": "Quartz", "count": 15 }
+    ],
+    "products": [
+      { "itemType": "Glass", "count": 1 }
+    ]
   }
 ]

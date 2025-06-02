@@ -9,13 +9,13 @@
 
     <ItemGroup>
         <None Update="Data\items.csv">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="Data\recipes.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="Data\Inventory.csv">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <None Update="Data\inventory.csv">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
     
