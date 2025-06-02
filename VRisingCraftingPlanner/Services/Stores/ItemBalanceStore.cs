@@ -15,6 +15,15 @@ public sealed class ItemBalanceStore
 
   public void Subtract(IEnumerable<Item> items) => Add(items, -1);
 
+  public int GetItemBalance(ItemType itemType)
+  {
+    var item = _items.FirstOrDefault(x => x.ItemType == itemType);
+    if (item != default)
+      return item.Count;
+
+    return 0;
+  }
+  
   private void Add(IEnumerable<Item> items, int countMultiplier)
   {
     foreach (var item in items)

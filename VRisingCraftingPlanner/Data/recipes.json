@@ -108,5 +108,24 @@
       { "itemType": "Venom Sap", "count": 4 },
       { "itemType": "Plank", "count": 1 }
     ]
+  },
+  {
+    "station": "Vermin Nest",
+    "ingredients": [
+      { "itemType": "Sludge-filled Canister", "count": 1 },
+      { "itemType": "Grave Dust", "count": 3 }
+    ],
+    "products": [
+      { "itemType": "Mutated Rat", "count": 6 }
+    ]
+  },
+  {
+    "station": "Grinder",
+    "ingredients": [
+      { "itemType": "Bone", "count": 48 }
+    ],
+    "products": [
+      { "itemType": "Grave Dust", "count": 1 }
+    ]
   }
 ]
