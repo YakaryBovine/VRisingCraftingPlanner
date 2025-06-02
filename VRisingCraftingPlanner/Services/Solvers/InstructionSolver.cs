@@ -48,8 +48,10 @@ public sealed class InstructionSolver(InventoryStore inventoryStore, RecipeStore
       }
       instructions.Add(new CraftInstruction(recipe, craftsNeeded, priority));
 
-      foreach (var subProduct in recipe.Ingredients.Where(x => x.ItemType.Origin == ItemOrigin.Product)) 
-        ProcessCraft(subProduct with { Count = subProduct.Count * -1 }, instructions, priority + 1);
+      foreach (var subProduct in recipe.Ingredients.Where(x => x.ItemType.Origin == ItemOrigin.Product))
+      {
+        ProcessCraft(subProduct with { Count = subProduct.Count * item.Count / productCount }, instructions, priority + 1);
+      }
     }
   }
   
