@@ -23,17 +23,12 @@ public sealed class InstructionSolver(
     PrintInstructions();
   }
 
-  private void ProcessInventory()
-  {
-    itemBalanceStore.Add(inventoryStore.GetInventory());
-  }
+  private void ProcessInventory() => itemBalanceStore.Add(inventoryStore.GetInventory());
 
   private void ProcessCrafts()
   {
     foreach (var item in itemBalanceStore.GetAllItems().Where(x => x.ItemType.Origin == ItemOrigin.Product).ToList())
-    {
       ProcessCraft(item, 1);
-    }
   }
 
   private void ProcessCraft(Item item, int priority)
@@ -50,10 +45,8 @@ public sealed class InstructionSolver(
       }
       instructionStore.Add(new CraftInstruction(recipe, craftsNeeded, priority));
 
-      foreach (var subProduct in recipe.Ingredients.Where(x => x.ItemType.Origin == ItemOrigin.Product))
-      {
-        ProcessCraft(subProduct with { Count = subProduct.Count * item.Count / productCount }, priority + 1);
-      }
+      foreach (var subProduct in recipe.Ingredients.Where(x => x.ItemType.Origin == ItemOrigin.Product)) 
+        ProcessCraft(subProduct with { Count = subProduct.Count * craftsNeeded * -1 }, priority + 1);
     }
   }
   
