@@ -1,0 +1,79 @@
+﻿[
+  {
+    "station": "Loom",
+    "ingredients": [
+      { "itemType": "Cotton", "count": 12 }
+    ],
+    "products": [
+      { "itemType": "Cotton Yarn", "count": 1 }
+    ],
+    "tier": 2
+  },
+  {
+    "station": "Loom",
+    "ingredients": [
+      { "itemType": "Cloth", "count": 3 },
+      { "itemType": "Silkworm", "count": 3 }
+    ],
+    "products": [
+      { "itemType": "Silk", "count": 2 }
+    ],
+    "tier": 5
+  },
+  {
+    "station": "Loom",
+    "ingredients": [
+      { "itemType": "Ghost Yarn", "count": 3 },
+      { "itemType": "Silk", "count": 3 }
+    ],
+    "products": [
+      { "itemType": "Shadow Weave", "count": 2 }
+    ],
+    "tier": 6
+  },
+  {
+    "station": "Loom",
+    "ingredients": [
+      { "itemType": "Ghost Shroom", "count": 12 },
+      { "itemType": "Wool Thread", "count": 3 },
+      { "itemType": "Cotton Yarn", "count": 2 }
+    ],
+    "products": [
+      { "itemType": "Ghost Yarn", "count": 2 }
+    ],
+    "tier": 6
+  },
+  {
+    "station": "Loom",
+    "ingredients": [
+      { "itemType": "Coarse Thread", "count": 3 },
+      { "itemType": "Cloth", "count": 1 }
+    ],
+    "products": [
+      { "itemType": "Wool Thread", "count": 2 }
+    ],
+    "tier": 5
+  },
+  {
+    "station": "Loom",
+    "ingredients": [
+      { "itemType": "Plant Fibre", "count": 6 },
+      { "itemType": "Pollen", "count": 9 }
+    ],
+    "products": [
+      { "itemType": "Coarse Thread", "count": 1 }
+    ],
+    "tier": 2
+  },
+  {
+    "station": "Loom",
+    "ingredients": [
+      { "itemType": "Thick Leather", "count": 3 },
+      { "itemType": "Plant Fibre", "count": 9 }
+    ],
+    "products": [
+      { "itemType": "Cloth", "count": 4 }
+    ],
+    "tier": 4
+  }
+]

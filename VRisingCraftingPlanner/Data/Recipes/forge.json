@@ -1,0 +1,12 @@
+﻿[
+  {
+    "station": "Forge",
+    "ingredients": [
+      { "itemType": "Iron Ore", "count": 15 }
+    ],
+    "products": [
+      { "itemType": "Iron Ingot", "count": 1 }
+    ],
+    "tier": 1
+  }
+]

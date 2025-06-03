@@ -1,0 +1,14 @@
+﻿[
+  {
+    "station": "Anvil",
+    "ingredients": [
+      { "itemType": "Gold Ingot", "count": 3 },
+      { "itemType": "Power Core", "count": 3 },
+      { "itemType": "Ember Glass", "count": 3 }
+    ],
+    "products": [
+      { "itemType": "Onyx Tear", "count": 1 }
+    ],
+    "tier": 5
+  }
+]

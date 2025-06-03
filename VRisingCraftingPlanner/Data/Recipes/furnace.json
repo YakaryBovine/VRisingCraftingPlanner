@@ -1,0 +1,56 @@
+﻿[
+  {
+    "station": "Furnace",
+    "ingredients": [
+      { "itemType": "Gold Jewelry", "count": 3 },
+      { "itemType": "Sulphur", "count": 1 }
+    ],
+    "products": [
+      { "itemType": "Gold Ingot", "count": 1 }
+    ],
+    "tier": 2
+  },
+  {
+    "station": "Furnace",
+    "ingredients": [
+      { "itemType": "Sulphur Ore", "count": 15 }
+    ],
+    "products": [
+      { "itemType": "Sulphur", "count": 1 }
+    ],
+    "tier": 1
+  },
+  {
+    "station": "Furnace",
+    "ingredients": [
+      { "itemType": "Venom Sap", "count": 6 },
+      { "itemType": "Emery", "count": 15 }
+    ],
+    "products": [
+      { "itemType": "Ember Glass", "count": 1 }
+    ],
+    "tier": 1
+  },
+  {
+    "station": "Furnace",
+    "ingredients": [
+      { "itemType": "Sludge-filled Canister", "count": 1 },
+      { "itemType": "Sulphur", "count": 3 },
+      { "itemType": "Tech Scrap", "count": 45 }
+    ],
+    "products": [
+      { "itemType": "Radium Alloy", "count": 4 }
+    ],
+    "tier": 3
+  },
+  {
+    "station": "Furnace",
+    "ingredients": [
+      { "itemType": "Quartz", "count": 15 }
+    ],
+    "products": [
+      { "itemType": "Glass", "count": 1 }
+    ],
+    "tier": 1
+  }
+]

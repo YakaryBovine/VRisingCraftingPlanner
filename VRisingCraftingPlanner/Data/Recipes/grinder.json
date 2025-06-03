@@ -1,0 +1,22 @@
+﻿[
+  {
+    "station": "Grinder",
+    "ingredients": [
+      { "itemType": "Bone", "count": 48 }
+    ],
+    "products": [
+      { "itemType": "Grave Dust", "count": 1 }
+    ],
+    "tier": 1
+  },
+  {
+    "station": "Grinder",
+    "ingredients": [
+      { "itemType": "Any Flower", "count": 15 }
+    ],
+    "products": [
+      { "itemType": "Pollen", "count": 10 }
+    ],
+    "tier": 1
+  }
+]

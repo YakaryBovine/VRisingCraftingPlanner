@@ -12,11 +12,19 @@ public sealed class RecipesReader(ItemTypeStore itemTypeStore)
     PropertyNameCaseInsensitive = true
   };
   
-  public IEnumerable<Recipe> LoadRecipes(string path)
+  public IEnumerable<Recipe> LoadRecipes(string folderPath)
   {
-    var json = File.ReadAllText(path);
-    var recipeDtos = JsonSerializer.Deserialize<List<RecipeDto>>(json, _options)!;
-    return recipeDtos.Select(RecipeDtoToRecipe);
+    var recipes = new List<Recipe>();
+
+    foreach (var file in Directory.GetFiles(folderPath, "*.json"))
+    {
+      var json = File.ReadAllText(file);
+      var recipeDtos = JsonSerializer.Deserialize<List<RecipeDto>>(json, _options);
+      if (recipeDtos != null) 
+        recipes.AddRange(recipeDtos.Select(RecipeDtoToRecipe));
+    }
+
+    return recipes;
   }
 
   private Recipe RecipeDtoToRecipe(RecipeDto recipeDto) => new(recipeDto.Ingredients.Select(ItemDtoToItem),

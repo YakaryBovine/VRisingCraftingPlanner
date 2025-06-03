@@ -1,0 +1,25 @@
+﻿[
+  {
+    "station": "Fabricator",
+    "ingredients": [
+      { "itemType": "Charged Battery", "count": 3 },
+      { "itemType": "Radium Alloy", "count": 6 }
+    ],
+    "products": [
+      { "itemType": "Power Core", "count": 2 }
+    ],
+    "tier": 4
+  },
+  {
+    "station": "Fabricator",
+    "ingredients": [
+      { "itemType": "Iron Ingot", "count": 1 },
+      { "itemType": "Mutant Grease", "count": 3 },
+      { "itemType": "Glass", "count": 3 }
+    ],
+    "products": [
+      { "itemType": "Sludge-filled Canister", "count": 1 }
+    ],
+    "tier": 2
+  }
+]

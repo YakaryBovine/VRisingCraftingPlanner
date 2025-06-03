@@ -1,0 +1,14 @@
+﻿[
+  {
+    "station": "Vermin Nest",
+    "ingredients": [
+      { "itemType": "Sludge-filled Canister", "count": 1 },
+      { "itemType": "Grave Dust", "count": 3 }
+    ],
+    "products": [
+      { "itemType": "Mutant Grease", "count": 60 },
+      { "itemType": "Bone", "count": 60 }
+    ],
+    "tier": 3
+  }
+]

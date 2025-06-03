@@ -1,0 +1,13 @@
+﻿[
+  {
+    "station": "Tailoring Bench",
+    "ingredients": [
+      { "itemType": "Shadow Weave", "count": 9 },
+      { "itemType": "Bat Leather", "count": 9 }
+    ],
+    "products": [
+      { "itemType": "Dracula's Dread Armor Piece", "count": 1 }
+    ],
+    "tier": 7
+  }
+]

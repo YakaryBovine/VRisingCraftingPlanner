@@ -1,0 +1,35 @@
+﻿[
+  {
+    "station": "Tannery",
+    "ingredients": [
+      { "itemType": "Oil", "count": 1 },
+      { "itemType": "Thick Hide", "count": 12 }
+    ],
+    "products": [
+      { "itemType": "Thick Leather", "count": 1 }
+    ],
+    "tier": 3
+  },
+  {
+    "station": "Tannery",
+    "ingredients": [
+      { "itemType": "Bat Hide", "count": 15 },
+      { "itemType": "Pristine Leather", "count": 3 }
+    ],
+    "products": [
+      { "itemType": "Bat Leather", "count": 2 }
+    ],
+    "tier": 4
+  },
+  {
+    "station": "Tannery",
+    "ingredients": [
+      { "itemType": "Mutant Grease", "count": 15 },
+      { "itemType": "Pristine Hide", "count": 15 }
+    ],
+    "products": [
+      { "itemType": "Pristine Leather", "count": 1 }
+    ],
+    "tier": 4
+  }
+]
