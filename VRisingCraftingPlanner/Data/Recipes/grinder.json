@@ -2,10 +2,22 @@
   {
     "station": "Grinder",
     "ingredients": [
-      { "itemType": "Bone", "count": 48 }
+      { "itemType": "Stone", "count": 9 }
     ],
     "products": [
-      { "itemType": "Grave Dust", "count": 1 }
+      { "itemType": "Stone Brick", "count": 1 },
+      { "itemType": "Stone Dust", "count": 1 }
+    ],
+    "tier": 1
+  },
+  {
+    "station": "Grinder",
+    "ingredients": [
+      { "itemType": "Clay", "count": 9 },
+      { "itemType": "Stone Brick", "count": 3 }
+    ],
+    "products": [
+      { "itemType": "Stone Body", "count": 1 }
     ],
     "tier": 1
   },
@@ -18,5 +30,56 @@
       { "itemType": "Pollen", "count": 10 }
     ],
     "tier": 1
+  },
+  {
+    "station": "Grinder",
+    "ingredients": [
+      { "itemType": "Crude Gem", "count": 1 }
+    ],
+    "products": [
+      { "itemType": "Gem Dust", "count": 4 }
+    ],
+    "tier": 1
+  },
+  {
+    "station": "Grinder",
+    "ingredients": [
+      { "itemType": "Regular Gem", "count": 1 }
+    ],
+    "products": [
+      { "itemType": "Gem Dust", "count": 16 }
+    ],
+    "tier": 1
+  },
+  {
+    "station": "Grinder",
+    "ingredients": [
+      { "itemType": "Flawless Gem", "count": 1 }
+    ],
+    "products": [
+      { "itemType": "Gem Dust", "count": 64 }
+    ],
+    "tier": 1
+  },
+  {
+    "station": "Grinder",
+    "ingredients": [
+      { "itemType": "Bone", "count": 48 }
+    ],
+    "products": [
+      { "itemType": "Grave Dust", "count": 1 }
+    ],
+    "tier": 1
+  },
+  {
+    "station": "Grinder",
+    "ingredients": [
+      { "itemType": "Scourgestone", "count": 1 },
+      { "itemType": "Ghost Crystal", "count": 24 }
+    ],
+    "products": [
+      { "itemType": "Spectral Dust", "count": 4 }
+    ],
+    "tier": 4
   }
 ]
